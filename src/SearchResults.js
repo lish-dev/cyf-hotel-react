@@ -34,7 +34,6 @@ const SearchResults = () => {
               {moment(result.checkOutDate).diff(result.checkInDate, "days")}
             </tr>
           ))}
-          ;
         </tbody>
       </table>
     </div>
