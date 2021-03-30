@@ -26,9 +26,9 @@ const CityData = [
 const TouristInfoCards = () => {
   return (
     <section>
-      {CityData.map((props) => {
+      {CityData.map((props, index) => {
         return (
-          <div className="card">
+          <div key={index} className="card">
             <img src={props.img}  alt={props.alt} className="card-img-top" />
             <div className="card-body">
               <h3>{props.name}</h3>
