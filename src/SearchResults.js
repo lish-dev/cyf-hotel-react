@@ -3,15 +3,12 @@ import moment from "moment";
 import FakeBookings from "./data/fakeBookings.json";
 
 const SearchResults = () => {
-  const [colour, setColour] = useState("none");
-  const colourChange = () => {
-    setColour((colours) => {
-      if (colours === "none") {
-        return "colourEffect";
-      } else {
-        return "none";
-      }
-    });
+  const colourChange = (e) => {
+    if (e.target.parentElement.classList.contains("colourEffect")) {
+      e.target.parentElement.classList.remove("colourEffect");
+    } else {
+      e.target.parentElement.classList.add("colourEffect");
+    }
   };
 
   return (
@@ -31,7 +28,7 @@ const SearchResults = () => {
       </thead>
       <tbody>
         {FakeBookings.map((result, index) => (
-          <tr key={index} onClick={colourChange} className={colour}>
+          <tr key={index} onClick={colourChange} className={null}>
             <td>{result.id}</td>
             <td>{result.title}</td>
             <td>{result.firstName}</td>
