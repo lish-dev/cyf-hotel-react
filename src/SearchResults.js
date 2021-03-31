@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
 import FakeBookings from "./data/fakeBookings.json";
 
