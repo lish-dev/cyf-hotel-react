@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 import FakeBookings from "./data/fakeBookings.json";
+// import CustomerProfile from "./Customer Profile";
+
 
 const SearchResults = () => {
   const colourChange = (e) => {
@@ -24,6 +26,7 @@ const SearchResults = () => {
           <th scope="col">Check in Date</th>
           <th scope="col">Check out Date</th>
           <th scope="col">No of Nights</th>
+          <button className="Customer Profile">Customer Profile</button>
         </tr>
       </thead>
       <tbody>
@@ -41,6 +44,7 @@ const SearchResults = () => {
           </tr>
         ))}
       </tbody>
+      
     </table>
   );
 };
