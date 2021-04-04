@@ -20,7 +20,7 @@ function CustomerProfile(props) {
         </li>
         <li>Customer-ID: {CustomerInfo.id}</li>
         <li>Customer-Email: {CustomerInfo.email}</li>
-        <li>Customer-phoneNumber: {CustomerInfo.vip}</li>
+        <li>Customer-phoneNumber:{CustomerInfo.phoneNumber} </li>
         <li>VIP: {CustomerInfo.vip === true ? "YES" : "NO"}</li>
       </ul>
     </div>
