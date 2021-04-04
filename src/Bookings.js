@@ -4,11 +4,10 @@ import SearchResults from "./SearchResults.js";
 
 const Bookings = () => {
   const search = (e) => {
-    var firstName = bookings.filter((item) =>
-      item.firstName.toLowerCase().includes(e.toLowerCase)
-    );
+    var firstName = bookings.filter((item) => {
+      return item.firstName.toLowerCase().includes(e.toLowerCase());
+    });
     setResult(firstName);
-    
   };
   const [bookings, setBookings] = useState([]);
   const [error, setError] = useState(false);

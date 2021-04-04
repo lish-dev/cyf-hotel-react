@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-
-
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const handleSearchInput = (event) => {
     setSearchInput(event.target.value);
   };
 
-  const searchBookings = (event) => {
-    event.preventDefault();
+  const onSubmitHandLer = (event) => {
     props.search(searchInput);
+    props.search(searchInput.toLocaleLowerCase());
+    event.preventDefault();
   };
 
   return (
@@ -20,19 +19,18 @@ const Search = (props) => {
       </div>
       <div className="row search-wrapper">
         <div className="col">
-          <form className="form-group search-box" onSubmit={searchBookings}>
+          <form onSubmit={onSubmitHandLer} className="form-group search-box">
             <label htmlFor="customerName">Customer name</label>
             <div className="search-row">
               <input
                 type="text"
+                value={searchInput}
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={searchInput}
                 onChange={handleSearchInput}
               />
               <SearchButton />
-              <button className="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
@@ -40,5 +38,4 @@ const Search = (props) => {
     </div>
   );
 };
-
 export default Search;
